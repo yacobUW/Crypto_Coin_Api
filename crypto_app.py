@@ -12,18 +12,20 @@ def main():
             try:
                 coin_name = coin_details['name']
 
+                # Retrieve available currencies for the coin
+                available_currencies = coin_details['market_data']['current_price'].keys()
+
                 print("\nChoose a currency to display prices in:")
-                available_currencies = ['usd', 'eur', 'gbp', 'jpy']
                 for idx, currency in enumerate(available_currencies, start=1):
                     print(f"{idx}. {currency.upper()}")
                 
                 currency_choice = int(input("Enter the number of your choice: ")) - 1
-                selected_currency = available_currencies[currency_choice]
+                selected_currency = list(available_currencies)[currency_choice]
 
                 # Fetch current price
-                price_data = api_requests.get_price_data([coin_id], 'usd', selected_currency)
+                price_data = api_requests.get_price_data([coin_id], selected_currency)
                 if price_data:
-                    coin_price = price_data[coin_id]
+                    coin_price = price_data[coin_id][selected_currency]
                     print(f"Current price: {coin_price} {selected_currency.upper()}")
 
                     # Fetch and display historical data
