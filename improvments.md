@@ -26,11 +26,3 @@ Here are some ideas and improvements that I plan to implement for the Crypto Inf
 - Add a simple portfolio tracking feature where users can input the quantity of their holdings and see the total value.
 - Store portfolio data locally and allow users to export/import their portfolio.
 
-## 6. Price Alerts
-
-- Implement a feature that allows users to set price alerts for specific cryptocurrencies and receive notifications when prices hit a certain threshold.
-
-## 7. User Preferences
-
-- Allow users to set their default currency for price display.
-- Provide options to customize the appearance of charts and data presentation.
