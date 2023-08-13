@@ -23,11 +23,14 @@ def main():
                 selected_currency = list(available_currencies)[currency_choice]
 
                 # Fetch current price
-                # price_data = api_requests.get_price_data([coin_id], selected_currency)
-                price_data = api_requests.get_price_data([coin_id], [selected_currency], selected_currency)
+                price_data = api_requests.get_price_data([coin_id], selected_currency)
                 if price_data:
-                    coin_price = price_data[coin_id][selected_currency]
-                    print(f"Current price: {coin_price} {selected_currency.upper()}")
+                    if isinstance(price_data, float):
+                        coin_price = price_data
+                        print(f"Current price: {coin_price} {selected_currency.upper()}")
+                    else:
+                        coin_price = price_data[coin_id][selected_currency]
+                        print(f"Current price: {coin_price} {selected_currency.upper()}")
 
                     # Fetch and display historical data
                     historical_data = api_requests.get_historical_data(coin_id, 30)
