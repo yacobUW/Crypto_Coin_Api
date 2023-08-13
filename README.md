@@ -11,7 +11,7 @@ Welcome to the Crypto Information Portal, a simple Python application that provi
 ## Installation
 
 1. Clone this repository to your local machine:
-git clone <repository-url>
+git clone https://github.com/yacobUW/Crypto_Coin_Api.git
 
 2. Navigate to the project directory:
 cd Crypto_Information_Portal
